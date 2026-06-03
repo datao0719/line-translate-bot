@@ -67,6 +67,9 @@ def translate_en_to_zh(text: str) -> str:
 
 請依照以下格式回覆（不要加多餘的標題或分隔線）：
 
+📝 繁體中文翻譯：
+[翻譯結果]
+
 ✅ 語法檢查：
 [若句子正確，說明「語法正確」並簡單說明這個句型的結構與用法；若有錯誤，清楚指出哪裡錯了，並給出正確版本與說明]
 
@@ -129,6 +132,11 @@ def handle_message(event):
 @app.route("/", methods=["GET"])
 def index():
     return "LINE Translation Bot is running! 🚀"
+
+
+@app.route("/ping", methods=["GET"])
+def ping():
+    return "pong", 200
 
 
 if __name__ == "__main__":
